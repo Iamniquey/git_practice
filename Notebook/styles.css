@@ -1,0 +1,26 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin-left: 40px;
+}
+
+.example {
+  background-color: rgb(17, 17, 17);
+  color: rgb(255, 226, 61);
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.example p {
+  margin: 3px;
+}
+
+.note-section li {
+  padding: 10px;
+}
