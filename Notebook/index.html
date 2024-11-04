@@ -33,13 +33,44 @@
             </p>
           </div>
         </li>
-        <li>touch: creates a new file without editing it.</li>
-        <li>echo: creates a file and adds initial text to it.</li>
+        <li>
+          touch: creates a new file without editing it.
+          <div class="example">
+            <p>$ touch newfile.txt</p>
+          </div>
+        </li>
+        <li>
+          echo: creates a file and adds text to it or appends text to an
+          existing file. (write is >, append is >>)
+          <div class="example">
+            <p>$ echo "Here's some text." > newfile.txt</p>
+            <p>$ echo "And here's some new text." >> newfile.txt</p>
+          </div>
+        </li>
         <li>
           cat: creates a file and allows adding text to it to happen directly in
-          the terminal following. Exit with Ctrl + D.
+          the terminal following. (Exit with Ctrl + D.) Also shows a files
+          contents.
+          <div class="example">
+            <p>$ cat > this-makes-a-new-file.txt</p>
+            <p>I'm adding text now...|</p>
+            <p>&nbsp;</p>
+            <p>$ cat this-displays-its-contents.txt</p>
+            <p>This is its contents.</p>
+          </div>
         </li>
-        <li>mkdir: makes a new folder</li>
+        <li>
+          sed: Adds new text to a specific line in a file.
+          <div class="example">
+            <p>$ sed -i '2a Here's some text for after line 2.' newfile.txt</p>
+          </div>
+        </li>
+        <li>
+          mkdir: makes a new folder
+          <div class="example">
+            <p>$ mkdir newFolder</p>
+          </div>
+        </li>
       </ol>
     </div>
   </section>
