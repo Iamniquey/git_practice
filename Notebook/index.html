@@ -11,11 +11,12 @@
 <body>
   <header>
     <h1>My Coding Notebook</h1>
+    <div id="table-of-contents"></div>
   </header>
   <section id="command-line">
     <h2>Command Line Stuff</h2>
     <div class="note-section">
-      <h4>Basic commands</h4>
+      <h3>Basic commands</h3>
       <ol>
         <li>
           ls: lists the files in the curent folder (list segment)
@@ -71,7 +72,39 @@
             <p>$ mkdir newFolder</p>
           </div>
         </li>
+        <li>
+          code: opens a file in VSCode
+          <div class="example">
+            <p>$ code index.html</p>
+          </div>
+        </li>
       </ol>
     </div>
   </section>
+  <script>
+    <!--Select all the headings-->
+    const headings = document.querySelectorAll("h2, h3, h4");
+    const tocContainer = document.getElementById("table-of-contents");
+    console.log("here");
+
+    headings.forEach((heading, index) => {
+      //Create ID for a heading if it doesn't have one
+      if (!heading.id) {
+        heading.id = `section-${index}`;
+      }
+
+      //Create an anchor link for headings
+      const link = document.createElement("a");
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      link.style.display = "block";
+      //can change
+
+      //adjust margin based on heading
+      link.style.marginLeft = `${(parseInt(heading.tagName[1]) - 1) * 20}px`;
+
+      //add linkto container
+      tocContainer.appendChild(link);
+    });
+  </script>
 </body>
