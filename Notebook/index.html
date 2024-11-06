@@ -11,6 +11,12 @@
 <body>
   <header>
     <h1>My Coding Notebook</h1>
+    <button id="theme-toggle">
+      <img
+        src="https://cdn-icons-png.flaticon.com/128/8165/8165773.png"
+        alt="day-night"
+      />
+    </button>
     <div id="table-of-contents"></div>
   </header>
   <section id="command-line">
@@ -42,7 +48,7 @@
         </li>
         <li>
           echo: creates a file and adds text to it or appends text to an
-          existing file. (write is >, append is >>)
+          existing file. (write and overwrite is >, append is >>)
           <div class="example">
             <p>$ echo "Here's some text." > newfile.txt</p>
             <p>$ echo "And here's some new text." >> newfile.txt</p>
@@ -82,10 +88,12 @@
     </div>
   </section>
   <script>
-    <!--Select all the headings-->
+    /******* ________________________ ********/
+    /*******MAKE DYNAMIC TOC********/
+    /******* ________________________ ********/
+
     const headings = document.querySelectorAll("h2, h3, h4");
     const tocContainer = document.getElementById("table-of-contents");
-    console.log("here");
 
     headings.forEach((heading, index) => {
       //Create ID for a heading if it doesn't have one
@@ -106,5 +114,28 @@
       //add linkto container
       tocContainer.appendChild(link);
     });
+
+    /******* ________________________ ********/
+    /******* MAKE LIGHT AND DARK MODE ********/
+    /******* ________________________ ********/
+
+    const themeToggleButton = document.getElementById("theme-toggle");
+
+    themeToggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      //Save
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    //Check save
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
   </script>
 </body>
