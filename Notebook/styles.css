@@ -1,7 +1,7 @@
 :root {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --background-color: #fff;
-  --color: #000;
+  --color: #303030;
 }
 * {
   scroll-behavior: smooth;
@@ -39,6 +39,8 @@ body {
   margin: 3px;
 }
 
+/**__________________   note-section  **/
+
 .note-section {
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -72,4 +74,15 @@ body {
   width: 100%;
   height: auto;
   max-width: 100%;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--color);
+  width: 1px;
+  height: 20px;
+  z-index: 10;
+  transition: width 1s ease-out;
 }
