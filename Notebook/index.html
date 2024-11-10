@@ -1,92 +1,14 @@
 <!DOCTYPE html>
 <head>
   <title>My Coding Notebook</title>
-  <link
-    rel="icon"
-    type="image/x-icon"
-    href="images/cat-write.png"
-  />
+  <link rel="icon" type="image/x-icon" href="images/cat-write.png" />
   <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
   <header>
     <div id="progress-bar"></div>
-    <img
-      id="logo"
-      src="images/cat-write.png"
-    />
+    <img id="logo" src="images/cat-write.png" />
     <h1>My Coding Notebook</h1>
-    <div id="table-of-contents"></div>
-  </header>
-  <section id="command-line">
-    <h2>Command Line Stuff</h2>
-    <div class="note-section">
-      <h3>Basic commands</h3>
-      <ol>
-        <li>
-          ls: lists the files in the curent folder (list segment)
-          <div class="example">
-            <p>$ ls</p>
-            <p>README.txt tester.txt</p>
-          </div>
-        </li>
-        <li>
-          pwd: shows the current folder (print working directory)
-          <div class="example">
-            <p>$ pwd</p>
-            <p>
-              /c/Users/iamni/Documents/Coding-Projects/git_practice/Notebook
-            </p>
-          </div>
-        </li>
-        <li>
-          touch: creates a new file without editing it.
-          <div class="example">
-            <p>$ touch newfile.txt</p>
-          </div>
-        </li>
-        <li>
-          echo: creates a file and adds text to it or appends text to an
-          existing file. (write and overwrite is >, append is >>)
-          <div class="example">
-            <p>$ echo "Here's some text." > newfile.txt</p>
-            <p>$ echo "And here's some new text." >> newfile.txt</p>
-          </div>
-        </li>
-        <li>
-          cat: creates a file and allows adding text to it to happen directly in
-          the terminal following. (Exit with Ctrl + D.) Also shows a files
-          contents.
-          <div class="example">
-            <p>$ cat > this-makes-a-new-file.txt</p>
-            <p>I'm adding text now...|</p>
-            <p>&nbsp;</p>
-            <p>$ cat this-displays-its-contents.txt</p>
-            <p>This is its contents.</p>
-          </div>
-        </li>
-        <li>
-          sed: Adds new text to a specific line in a file.
-          <div class="example">
-            <p>$ sed -i '2a Here's some text for after line 2.' newfile.txt</p>
-          </div>
-        </li>
-        <li>
-          mkdir: makes a new folder
-          <div class="example">
-            <p>$ mkdir newFolder</p>
-          </div>
-        </li>
-        <li>
-          code: opens a file in VSCode
-          <div class="example">
-            <p>$ code index.html</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-  <footer>
     <!--Light mode dark mode toggle button-->
     <button id="theme-toggle">
       <img
@@ -94,11 +16,112 @@
         alt="day-night"
       />
     </button>
-  </footer>
+    <div id="table-of-contents"></div>
+  </header>
+  <main>
+    <section id="command-line">
+      <div class="toggle-arrow"></div>
+      <h2>Command Line Stuff</h2>
+      <div class="note-section">
+        <h3>Basic commands</h3>
+        <ol>
+          <li>
+            ls: lists the files in the curent folder (list segment)
+            <div class="example">
+              <p>$ ls</p>
+              <p>README.txt tester.txt</p>
+            </div>
+          </li>
+          <li>
+            pwd: shows the current folder (print working directory)
+            <div class="example">
+              <p>$ pwd</p>
+              <p>
+                /c/Users/iamni/Documents/Coding-Projects/git_practice/Notebook
+              </p>
+            </div>
+          </li>
+          <li>
+            touch: creates a new file without editing it
+            <div class="example">
+              <p>$ touch newfile.txt</p>
+            </div>
+          </li>
+          <li>
+            echo: creates a file and adds text to it or appends text to an
+            existing file. (write and overwrite is >, append is >>)
+            <div class="example">
+              <p>$ echo "Here's some text." > newfile.txt</p>
+              <p>$ echo "And here's some new text." >> newfile.txt</p>
+            </div>
+          </li>
+          <li>
+            cat: creates a file and allows adding text to it to happen directly
+            in the terminal following. (Exit with Ctrl + D.) Also shows a files
+            contents.
+            <div class="example">
+              <p>$ cat > this-makes-a-new-file.txt</p>
+              <p>I'm adding text now...|</p>
+              <p>&nbsp;</p>
+              <p>$ cat this-displays-its-contents.txt</p>
+              <p>This is its contents.</p>
+            </div>
+          </li>
+          <li>
+            sed: adds new text to a specific line in a file
+            <div class="example">
+              <p>
+                $ sed -i '2a Here's some text for after line 2.' newfile.txt
+              </p>
+            </div>
+          </li>
+          <li>
+            mkdir: makes a new folder
+            <div class="example">
+              <p>$ mkdir newFolder</p>
+            </div>
+          </li>
+          <li>
+            code: opens a file in VSCode
+            <div class="example">
+              <p>$ code index.html</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section id="javascript">
+      <div class="toggle-arrow"></div>
+      <h2>Javascript Stuff</h2>
+      <div class="note-section">
+        <h3>Variable Declarations</h3>
+        <ol>
+          <li>
+            var: an old declarator (we use let instead)
+            <div class="example">
+              <p>var aVarVar = "This is a variable";</p>
+            </div>
+          </li>
+          <li>
+            let: block level declarator that can be reassigned
+            <div class="example">
+              <p>let aLetVar = "This is a variable that can change.";</p>
+            </div>
+          </li>
+          <li>
+            const: block level declarator that cannot be reassigned
+            <div class="example">
+              <p>const aConstVar = "This is a variable that cannot change.";</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
   <script>
     /**___________________________________________________________________________________________________ **/
     /*******MAKE DYNAMIC TOC********/
-    
 
     const headings = document.querySelectorAll("h2, h3, h4");
     const tocContainer = document.getElementById("table-of-contents");
@@ -125,7 +148,6 @@
 
     /**___________________________________________________________________________________________________ **/
     /******* MAKE LIGHT AND DARK MODE ********/
-    
 
     const themeToggleButton = document.getElementById("theme-toggle");
 
@@ -148,7 +170,6 @@
 
     /**___________________________________________________________________________________________________ **/
     /******* PAGE SCROLL PROGRESS BAR ********/
-    
 
     //get the progress bar element
     const progressBar = document.getElementById("progress-bar");
@@ -173,9 +194,17 @@
       progressBar.style.width = viewWidth * percentScroll + "px"; //could have left it as a percent
     });
 
-
     /**___________________________________________________________________________________________________ **/
     /******* COLLAPSIBLE SECTIONS ********/
 
+    const toggleArrows = document.querySelectorAll(".toggle-arrow");
+
+    toggleArrows.forEach((Arrow) => {
+      Arrow.addEventListener("click", () => {
+        const togContainer = Arrow.parentElement.querySelector(".note-section");
+
+        togContainer.classList.toggle("closed");
+      });
+    });
   </script>
 </body>

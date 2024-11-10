@@ -21,6 +21,19 @@ body {
   margin: 50px;
   background-color: var(--background-color);
   color: var(--color);
+  position: relative;
+}
+
+header {
+  width: 20%;
+  height: 100%;
+  position: fixed;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 23%;
 }
 
 .example {
@@ -35,17 +48,29 @@ body {
   width: 700px;
 }
 
+section {
+  position: relative;
+}
+
 .example p {
   margin: 3px;
 }
-
-/**__________________   note-section  **/
 
 .note-section {
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 800px;
   padding: 0 30px 0 30px;
+  max-height: 1500px;
+  opacity: 1;
+  overflow: hidden;
+  transition: opacity 1s ease, max-height 2s ease;
+}
+
+.note-section.closed {
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 2s ease, max-height 0.5s ease;
 }
 
 .note-section li {
@@ -85,4 +110,22 @@ body {
   height: 20px;
   z-index: 10;
   transition: width 1s ease-out;
+}
+
+.toggle-arrow {
+  content: url(images/play.png);
+  position: absolute;
+  width: 10px;
+  top: 12px;
+  left: -12px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.toggle-arrow:active {
+  width: 9px;
+}
+.toggle-arrow:hover {
+  opacity: 100;
+  transition: opacity 200ms ease;
 }
