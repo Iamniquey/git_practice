@@ -10,12 +10,16 @@
     <img id="logo" src="images/cat-write.png" />
     <h1>My Coding Notebook</h1>
     <!--Light mode dark mode toggle button-->
-    <button id="theme-toggle">
-      <img
-        src="https://cdn-icons-png.flaticon.com/128/8165/8165773.png"
-        alt="day-night"
-      />
-    </button>
+    <div id="light-dark-container">
+      <span id="light">Light &#x2190;</span>
+      <button id="theme-toggle">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/8165/8165773.png"
+          alt="day-night"
+        />
+      </button>
+      <span id="dark">&#x2192; Dark </span>
+    </div>
     <div id="table-of-contents"></div>
   </header>
   <main>
@@ -36,9 +40,7 @@
             pwd: shows the current folder (print working directory)
             <div class="example">
               <p>$ pwd</p>
-              <p>
-                /c/Users/iamni/Documents/Coding-Projects/git_practice/Notebook
-              </p>
+              <p>/c/Users/USERNAME/Documents/coding-projects/notebook</p>
             </div>
           </li>
           <li>
@@ -112,6 +114,47 @@
             const: block level declarator that cannot be reassigned
             <div class="example">
               <p>const aConstVar = "This is a variable that cannot change.";</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="note-section">
+        <h3>Query Selectors</h3>
+        <ol>
+          <li>
+            querySelector: select the first occurence of a CSS element. (the
+            identification symbol must accompany the name, i.e. "." or "#",
+            etc.)
+            <div class="example">
+              <p>const newVar = document.querySelector(".class1");</p>
+            </div>
+          </li>
+          <li>
+            querySelectorAll: select all the matching of a CSS class
+            <div class="example">
+              <p>const newVarAll = document.querySelector(".class1");</p>
+            </div>
+          </li>
+          <li>
+            getElementById: best and most common way to select one element
+            <div class="example">
+              <p>const anElem = document.getElementById("this-one");</p>
+            </div>
+          </li>
+          <li>
+            getElementsByClassName: gets a live HTMLCollection of all objects
+            with a particlar class name
+            <div class="example">
+              <p>
+                const aClassList = document.getElementsByClassName("class1");
+              </p>
+            </div>
+          </li>
+          <li>
+            getElementsByTagName: gets a live HTMLCollection of all objects with
+            a particlar tag name
+            <div class="example">
+              <p>const aTagList = document.getElementsByTagName("p");</p>
             </div>
           </li>
         </ol>
@@ -201,7 +244,7 @@
 
     toggleArrows.forEach((Arrow) => {
       Arrow.addEventListener("click", () => {
-        const togContainer = Arrow.parentElement.querySelector(".note-section");
+        const togContainer = Arrow.parentElement;
 
         togContainer.classList.toggle("closed");
       });
