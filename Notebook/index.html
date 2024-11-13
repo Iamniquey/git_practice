@@ -1,253 +1,240 @@
 <!DOCTYPE html>
-<head>
-  <title>My Coding Notebook</title>
-  <link rel="icon" type="image/x-icon" href="images/cat-write.png" />
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-</head>
-<body>
-  <header>
-    <div id="progress-bar"></div>
-    <img id="logo" src="images/cat-write.png" />
-    <h1>My Coding Notebook</h1>
-    <!--Light mode dark mode toggle button-->
-    <div id="light-dark-container">
-      <span id="light">Light &#x2190;</span>
-      <button id="theme-toggle">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/8165/8165773.png"
-          alt="day-night"
-        />
-      </button>
-      <span id="dark">&#x2192; Dark </span>
-    </div>
-    <div id="table-of-contents"></div>
-  </header>
-  <main>
-    <section id="command-line">
-      <div class="toggle-arrow"></div>
-      <h2>Command Line Stuff</h2>
-      <div class="note-section">
-        <h3>Basic commands</h3>
-        <ol>
-          <li>
-            ls: lists the files in the curent folder (list segment)
-            <div class="example">
-              <p>$ ls</p>
-              <p>README.txt tester.txt</p>
-            </div>
-          </li>
-          <li>
-            pwd: shows the current folder (print working directory)
-            <div class="example">
-              <p>$ pwd</p>
-              <p>/c/Users/USERNAME/Documents/coding-projects/notebook</p>
-            </div>
-          </li>
-          <li>
-            touch: creates a new file without editing it
-            <div class="example">
-              <p>$ touch newfile.txt</p>
-            </div>
-          </li>
-          <li>
-            echo: creates a file and adds text to it or appends text to an
-            existing file. (write and overwrite is >, append is >>)
-            <div class="example">
-              <p>$ echo "Here's some text." > newfile.txt</p>
-              <p>$ echo "And here's some new text." >> newfile.txt</p>
-            </div>
-          </li>
-          <li>
-            cat: creates a file and allows adding text to it to happen directly
-            in the terminal following. (Exit with Ctrl + D.) Also shows a files
-            contents.
-            <div class="example">
-              <p>$ cat > this-makes-a-new-file.txt</p>
-              <p>I'm adding text now...|</p>
-              <p>&nbsp;</p>
-              <p>$ cat this-displays-its-contents.txt</p>
-              <p>This is its contents.</p>
-            </div>
-          </li>
-          <li>
-            sed: adds new text to a specific line in a file
-            <div class="example">
-              <p>
-                $ sed -i '2a Here's some text for after line 2.' newfile.txt
-              </p>
-            </div>
-          </li>
-          <li>
-            mkdir: makes a new folder
-            <div class="example">
-              <p>$ mkdir newFolder</p>
-            </div>
-          </li>
-          <li>
-            code: opens a file in VSCode
-            <div class="example">
-              <p>$ code index.html</p>
-            </div>
-          </li>
-        </ol>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Coding Notebook</title>
+    <link rel="icon" type="image/x-icon" href="images/cat-write.png" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div id="progress-bar"></div>
+      <img id="logo" src="images/cat-write.png" />
+      <h1>My Coding Notebook</h1>
+      <!--Light mode dark mode toggle button-->
+      <div id="light-dark-container">
+        <span id="light">Light &#x2190;</span>
+        <button id="theme-toggle">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/8165/8165773.png"
+            alt="day-night"
+          />
+        </button>
+        <span id="dark">&#x2192; Dark </span>
       </div>
-    </section>
-    <section id="javascript">
-      <div class="toggle-arrow"></div>
-      <h2>Javascript Stuff</h2>
-      <div class="note-section">
-        <h3>Variable Declarations</h3>
-        <ol>
-          <li>
-            var: an old declarator (we use let instead)
-            <div class="example">
-              <p>var aVarVar = "This is a variable";</p>
-            </div>
-          </li>
-          <li>
-            let: block level declarator that can be reassigned
-            <div class="example">
-              <p>let aLetVar = "This is a variable that can change.";</p>
-            </div>
-          </li>
-          <li>
-            const: block level declarator that cannot be reassigned
-            <div class="example">
-              <p>const aConstVar = "This is a variable that cannot change.";</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-      <div class="note-section">
-        <h3>Query Selectors</h3>
-        <ol>
-          <li>
-            querySelector: select the first occurence of a CSS element. (the
-            identification symbol must accompany the name, i.e. "." or "#",
-            etc.)
-            <div class="example">
-              <p>const newVar = document.querySelector(".class1");</p>
-            </div>
-          </li>
-          <li>
-            querySelectorAll: select all the matching of a CSS class
-            <div class="example">
-              <p>const newVarAll = document.querySelector(".class1");</p>
-            </div>
-          </li>
-          <li>
-            getElementById: best and most common way to select one element
-            <div class="example">
-              <p>const anElem = document.getElementById("this-one");</p>
-            </div>
-          </li>
-          <li>
-            getElementsByClassName: gets a live HTMLCollection of all objects
-            with a particlar class name
-            <div class="example">
-              <p>
-                const aClassList = document.getElementsByClassName("class1");
-              </p>
-            </div>
-          </li>
-          <li>
-            getElementsByTagName: gets a live HTMLCollection of all objects with
-            a particlar tag name
-            <div class="example">
-              <p>const aTagList = document.getElementsByTagName("p");</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-  </main>
-  <footer></footer>
-  <script>
-    /**___________________________________________________________________________________________________ **/
-    /*******MAKE DYNAMIC TOC********/
-
-    const headings = document.querySelectorAll("h2, h3, h4");
-    const tocContainer = document.getElementById("table-of-contents");
-
-    headings.forEach((heading, index) => {
-      //Create ID for a heading if it doesn't have one
-      if (!heading.id) {
-        heading.id = `section-${index}`;
-      }
-
-      //Create an anchor link for headings
-      const link = document.createElement("a");
-      link.href = `#${heading.id}`;
-      link.textContent = heading.textContent;
-      link.style.display = "block";
-      //can change
-
-      //adjust margin based on heading
-      link.style.marginLeft = `${(parseInt(heading.tagName[1]) - 1) * 20}px`;
-
-      //add link to container
-      tocContainer.appendChild(link);
-    });
-
-    /**___________________________________________________________________________________________________ **/
-    /******* MAKE LIGHT AND DARK MODE ********/
-
-    const themeToggleButton = document.getElementById("theme-toggle");
-
-    themeToggleButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-      //Save
-      if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
-    });
-
-    //Check save
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark-mode");
-    }
-
-    /**___________________________________________________________________________________________________ **/
-    /******* PAGE SCROLL PROGRESS BAR ********/
-
-    //get the progress bar element
-    const progressBar = document.getElementById("progress-bar");
-    // get page height
-    const pageHeight = document.documentElement.scrollHeight;
-    // get view width and height
-    const viewWidth = document.documentElement.clientWidth;
-    const viewHeight = document.documentElement.clientHeight;
-    // get scrollable distance
-    const scrollableHeight = pageHeight - viewHeight;
-
-    // tracking scrolling and update progress bar accordingly
-    document.addEventListener("scroll", () => {
-      // Get the current width and height
-      let currentWidth = progressBar.offsetWidth;
-
-      // calculate where we are in the scroll
-      let currentScroll = document.documentElement.scrollTop;
-      let percentScroll = currentScroll / scrollableHeight;
-
-      // update progress bar
-      progressBar.style.width = viewWidth * percentScroll + "px"; //could have left it as a percent
-    });
-
-    /**___________________________________________________________________________________________________ **/
-    /******* COLLAPSIBLE SECTIONS ********/
-
-    const toggleArrows = document.querySelectorAll(".toggle-arrow");
-
-    toggleArrows.forEach((Arrow) => {
-      Arrow.addEventListener("click", () => {
-        const togContainer = Arrow.parentElement;
-
-        togContainer.classList.toggle("closed");
-      });
-    });
-  </script>
-</body>
+      <div id="table-of-contents"></div>
+    </header>
+    <main>
+      <div id="section-tabs"></div>
+      <section id="command-line">
+        <div class="toggle-arrow"></div>
+        <h2>Command Line Stuff</h2>
+        <div class="note-section">
+          <h3>Basic commands</h3>
+          <ol>
+            <li>
+              ls: lists the files in the curent folder (list segment)
+              <div class="example">
+                <p>$ ls</p>
+                <p>README.txt tester.txt</p>
+              </div>
+            </li>
+            <li>
+              pwd: shows the current folder (print working directory)
+              <div class="example">
+                <p>$ pwd</p>
+                <p>/c/Users/USERNAME/Documents/coding-projects/notebook</p>
+              </div>
+            </li>
+            <li>
+              touch: creates a new file without editing it
+              <div class="example">
+                <p>$ touch newfile.txt</p>
+              </div>
+            </li>
+            <li>
+              echo: creates a file and adds text to it or appends text to an
+              existing file. (write and overwrite is >, append is >>)
+              <div class="example">
+                <p>$ echo "Here's some text." > newfile.txt</p>
+                <p>$ echo "And here's some new text." >> newfile.txt</p>
+              </div>
+            </li>
+            <li>
+              cat: creates a file and allows adding text to it to happen
+              directly in the terminal following. (Exit with Ctrl + D.) Also
+              shows a files contents.
+              <div class="example">
+                <p>$ cat > this-makes-a-new-file.txt</p>
+                <p>I'm adding text now...|</p>
+                <p>&nbsp;</p>
+                <p>$ cat this-displays-its-contents.txt</p>
+                <p>This is its contents.</p>
+              </div>
+            </li>
+            <li>
+              sed: adds new text to a specific line in a file
+              <div class="example">
+                <p>
+                  $ sed -i '2a Here's some text for after line 2.' newfile.txt
+                </p>
+              </div>
+            </li>
+            <li>
+              mkdir: makes a new folder
+              <div class="example">
+                <p>$ mkdir newFolder</p>
+              </div>
+            </li>
+            <li>
+              code: opens a file in VSCode
+              <div class="example">
+                <p>$ code index.html</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="javascript">
+        <div class="toggle-arrow"></div>
+        <h2>Javascript Stuff</h2>
+        <div class="note-section">
+          <h3>Variable Declarations</h3>
+          <ol>
+            <li>
+              var: an old declarator (we use let instead)
+              <div class="example">
+                <p>var aVarVar = "This is a variable";</p>
+              </div>
+            </li>
+            <li>
+              let: block level declarator that can be reassigned
+              <div class="example">
+                <p>let aLetVar = "This is a variable that can change.";</p>
+              </div>
+            </li>
+            <li>
+              const: block level declarator that cannot be reassigned
+              <div class="example">
+                <p>
+                  const aConstVar = "This is a variable that cannot change.";
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="note-section">
+          <h3>Query Selectors</h3>
+          <ol>
+            <li>
+              querySelector: select the first occurence of a CSS element. (the
+              identification symbol must accompany the name, i.e. "." or "#",
+              etc.)
+              <div class="example">
+                <p>const newVar = document.querySelector(".class1");</p>
+              </div>
+            </li>
+            <li>
+              querySelectorAll: select all the matching of a CSS class
+              <div class="example">
+                <p>const newVarAll = document.querySelector(".class1");</p>
+              </div>
+            </li>
+            <li>
+              getElementById: best and most common way to select one element
+              <div class="example">
+                <p>const anElem = document.getElementById("this-one");</p>
+              </div>
+            </li>
+            <li>
+              getElementsByClassName: gets a live HTMLCollection of all objects
+              with a particlar class name
+              <div class="example">
+                <p>
+                  const aClassList = document.getElementsByClassName("class1");
+                </p>
+              </div>
+            </li>
+            <li>
+              getElementsByTagName: gets a live HTMLCollection of all objects
+              with a particlar tag name
+              <div class="example">
+                <p>const aTagList = document.getElementsByTagName("p");</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="react">
+        <div class="toggle-arrow"></div>
+        <h2>React Stuff</h2>
+        <div class="note-section">
+          <h3>Create a React Project</h3>
+          <ol>
+            <li>
+              From the command line (i.e. Git Bash), create a Vite React project
+              and confrim.
+              <div class="example">
+                <p>$ npm create vite@latest</p>
+                <p>Okay to proceed? (y) y</p>
+              </div>
+            </li>
+            <li>
+              Enter the project name.
+              <div class="example">
+                <p>? Project name: project-name</p>
+              </div>
+            </li>
+            <li>
+              Select the React framework with arrow keys and press enter.
+              <div class="example">
+                <p>? Select a framework:</p>
+                <p>Vanilla</p>
+                <p>Vue</p>
+                <p>React</p>
+                <p>Preact</p>
+                <p>Lit</p>
+                <p>Svelte</p>
+                <p>Others</p>
+              </div>
+            </li>
+            <li>
+              Then choose the language variant. I want to work in Javascript.
+              <div class="example">
+                <p>? Select variant:</p>
+                <p>JavaScript</p>
+                <p>TypeScript</p>
+                <p>JavaScript + SWC</p>
+                <p>TypeScript + SWC</p>
+              </div>
+            </li>
+            <li>
+              Enter the folder.
+              <div class="example">
+                <p>$ cd project-name</p>
+              </div>
+            </li>
+            <li>
+              Install npm with "i" or "install" and then open in VS Code.
+              <div class="example">
+                <p>$ npm i</p>
+                <p>$ code .</p>
+              </div>
+            </li>
+            <li>
+              To run a live verson of the site, run the following code in the VS
+              Code terminal (Open with shortcut Ctrl+Shift+` ), and click on the
+              link created.
+              <div class="example">
+                <p>> npm run dev</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

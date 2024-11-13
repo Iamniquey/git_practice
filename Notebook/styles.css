@@ -59,7 +59,7 @@ h1 {
 
 #table-of-contents a {
   text-decoration: none;
-  color: rgb(148, 17, 180);;
+  color: #1a4885;
 }
 
 #table-of-contents a:hover {
@@ -88,7 +88,7 @@ h1 {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #bae9ce;
+  background-color: #fff;
   border: 2px solid rgb(98, 85, 214);
 }
 
@@ -176,4 +176,13 @@ section.closed {
 
 h2 {
   display: inline-block;
+}
+
+#section-tabs a{
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
 }
