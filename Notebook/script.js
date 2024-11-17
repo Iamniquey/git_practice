@@ -1,7 +1,7 @@
 /**___________________________________________________________________________________________________ **/
 /*******MAKE DYNAMIC TOC********/
 
-const headings = document.querySelectorAll("h2, h3, h4");
+const headings = document.querySelectorAll("h2");
 const tocContainer = document.getElementById("table-of-contents");
 //count the headings
 let countHeading1 = 1;
@@ -17,22 +17,6 @@ headings.forEach((heading, index) => {
       countHeading1 += 1;
       //reset
       countHeading2 = 1;
-    }
-    if (heading.tagName[1] === "3") {
-      heading.id = `section-${countHeading1 - 1}-${countHeading2}`;
-      //increment
-      countHeading2 += 1;
-      //reset
-      countHeading3 = 1;
-    }
-    if (heading.tagName[1] === "4") {
-      heading.id = `section-${countHeading1 - 1}-${
-        countHeading2 - 1
-      }-${countHeading3}`;
-      //increment
-      countHeading3 += 1;
-      //reset
-      countHeading4 = 1;
     }
   }
 
@@ -142,13 +126,33 @@ headingsWithTabs.forEach((hed) => {
       secTabContainer.id = `sec-tab-${hed.tagName[1]}`;
     }
 
-    headingsToTab.forEach((hed2) => {
+    headingsToTab.forEach((hed2, index) => {
+      //show first tab
+      if (index === 0) {
+        switchTabs(hed2);
+        //hed2.parentElement.classList.add("open-tab");
+      }
+      //dynamically create tab links
       const link = document.createElement("a");
-      link.href = `#${hed2.id}`;
+      link.href = "";
       link.textContent = hed2.textContent;
       link.style.display = "inline-block";
-
       secTabContainer.appendChild(link);
+
+      //switch tab visibility
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        switchTabs(hed2);
+      });
     });
+
+    //define switch tabs funtion
+    function switchTabs(tab) {
+      headingsToTab.forEach((hed3) => {
+        hed3.parentElement.classList.remove("open-tab");
+      });
+      tab.parentElement.classList.add("open-tab");
+      console.log(tab);
+    }
   }
 });
