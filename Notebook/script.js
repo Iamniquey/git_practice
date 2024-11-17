@@ -66,20 +66,17 @@ if (savedTheme === "dark") {
 /**___________________________________________________________________________________________________ **/
 /******* PAGE SCROLL PROGRESS BAR ********/
 
-//get the progress bar element
-const progressBar = document.getElementById("progress-bar");
-// get page height
-const pageHeight = document.documentElement.scrollHeight;
-// get view width and height
-const viewWidth = document.documentElement.clientWidth;
-const viewHeight = document.documentElement.clientHeight;
-// get scrollable distance
-const scrollableHeight = pageHeight - viewHeight;
-
 // tracking scrolling and update progress bar accordingly
 document.addEventListener("scroll", () => {
-  // Get the current width and height
-  let currentWidth = progressBar.offsetWidth;
+  //get the progress bar element
+  const progressBar = document.getElementById("progress-bar");
+  // get page height
+  const pageHeight = document.documentElement.scrollHeight;
+  // get view width and height
+  const viewWidth = document.documentElement.clientWidth;
+  const viewHeight = document.documentElement.clientHeight;
+  // get scrollable distance
+  const scrollableHeight = pageHeight - viewHeight;
 
   // calculate where we are in the scroll
   let currentScroll = document.documentElement.scrollTop;
