@@ -114,12 +114,20 @@ h1 {
 section {
   position: relative;
   z-index: 1;
-  max-height: 1500px;
+  max-height: 700px;
   overflow: hidden;
-  transition: opacity 1s ease, max-height 2s ease;
+  overflow-y: scroll;
+  transition: opacity 1s ease, max-height 1s ease;
+  
+  padding: 0 5px 5px 5px;
+  margin: 5px 0;
+
+  border: 1px solid #a0d9e0;
+  border-radius: 5px;
 }
 
 section.closed {
+  overflow-y:hidden;
   max-height: 40px;
   transition: opacity 2s ease, max-height 0.5s ease;
 }
@@ -178,10 +186,10 @@ h2 {
   display: inline-block;
 }
 
-#section-tabs a{
+.section-tabs a{
   background: #f9f9f9;
   padding: 10px;
-  margin: 0 15px;
+  margin: 7px 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
   text-decoration: none;

@@ -119,7 +119,7 @@ const toggleArrows = document.querySelectorAll(".toggle-arrow");
 
 toggleArrows.forEach((Arrow) => {
   Arrow.addEventListener("click", () => {
-    const togContainer = Arrow.parentElement;
+    const togContainer = Arrow.parentElement.parentElement;
 
     togContainer.classList.toggle("closed");
   });
@@ -128,14 +128,27 @@ toggleArrows.forEach((Arrow) => {
 /**___________________________________________________________________________________________________ **/
 /******* TABBED SECTIONS ********/
 
-const sectionTabs = document.querySelectorAll("h2");
-const secTabContainer = document.getElementById("section-tabs");
+const headingsWithTabs = document.querySelectorAll("h2");
 
-sectionTabs.forEach((sec) => {
-  const link = document.createElement("a");
-  link.href = `#${sec}`;
-  link.textContent = sec.textContent;
-  link.style.display = "inline-block";
+headingsWithTabs.forEach((hed) => {
+  const headingsToTab = hed.parentElement.querySelectorAll("h3");
 
-  secTabContainer.appendChild(link);
+  const secTabContainer = hed.parentElement.querySelector(".section-tabs");
+
+  //make sure section-tabs exists
+  if (secTabContainer) {
+    //add ids to section tabs
+    if (!secTabContainer.id) {
+      secTabContainer.id = `sec-tab-${hed.tagName[1]}`;
+    }
+
+    headingsToTab.forEach((hed2) => {
+      const link = document.createElement("a");
+      link.href = `#${hed2.id}`;
+      link.textContent = hed2.textContent;
+      link.style.display = "inline-block";
+
+      secTabContainer.appendChild(link);
+    });
+  }
 });
