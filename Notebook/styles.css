@@ -105,7 +105,7 @@ h1 {
   font-size: 14px;
   border: 1px solid #9c9fbe;
   border-radius: 5px;
-  width: 700px;
+  width: 670px;
 }
 
 section {
@@ -114,10 +114,10 @@ section {
   width: 800px;
   height: 40px;
   overflow: hidden;
-  
+
   transition: opacity 1s ease, height 1s ease;
 
-  padding: 0 5px 5px 5px;
+  padding: 0 15px 15px 15px;
   margin: 5px 0;
 
   border: 1px solid #a0d9e0;
@@ -193,8 +193,17 @@ h2 {
 .section-tabs a {
   background: #f9f9f9;
   padding: 10px;
-  margin: 7px 15px;
+  margin: 7px -1px;
   border: 1px solid #ddd;
   border-radius: 4px;
   text-decoration: none;
+  color: #1a4885;
+}
+
+.section-tabs a.selected {
+  background: var(--background-color);
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: var(--color)
 }

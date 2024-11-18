@@ -109,7 +109,6 @@ toggleArrows.forEach((Arrow) => {
 toggleArrows.forEach((Arrow) => {
   const togContainer = Arrow.parentElement.parentElement;
   //Check save
-  console.log(togContainer);
   const savedTheme = localStorage.getItem(`${togContainer.id}-coll`);
   if (savedTheme === "open") {
     togContainer.classList.add("open");
@@ -134,10 +133,6 @@ headingsWithTabs.forEach((hed) => {
     }
 
     headingsToTab.forEach((hed2, index) => {
-      //show first tab
-      if (index === 0) {
-        switchTabs(hed2);
-      }
       //dynamically create tab links
       const link = document.createElement("a");
       link.href = "";
@@ -149,15 +144,36 @@ headingsWithTabs.forEach((hed) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
         switchTabs(hed2);
+        link.classList.add("selected");
       });
+
+      //show first tab
+      if (index === 0) {
+        switchTabs(hed2);
+        link.classList.add("selected");
+      }
     });
 
     //define switch tabs funtion
     function switchTabs(tab) {
+      //deselect all links
+      const links = tab.parentElement.parentElement
+        .querySelector(".section-tabs")
+        .querySelectorAll("a");
+      links.forEach((link) => {
+        link.classList.remove("selected");
+      });
+
+      //close all tabs
       headingsToTab.forEach((hed3) => {
         hed3.parentElement.classList.remove("open-tab");
       });
+
+      //open appropriate tab
       tab.parentElement.classList.add("open-tab");
     }
   }
 });
+
+/**___________________________________________________________________________________________________ **/
+/******* FAVORITE A NOTE ********/
