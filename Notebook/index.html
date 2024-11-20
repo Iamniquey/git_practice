@@ -9,6 +9,7 @@
   </head>
   <body>
     <header>
+      <ol><li>Hi</li></ol>
       <div id="progress-bar"></div>
       <img id="logo" src="images/cat-write.png" />
       <h1>My Coding Notebook</h1>
@@ -26,6 +27,7 @@
       <div id="table-of-contents"></div>
     </header>
     <main>
+      <div id="collection">
       <section id="command-line">
         <h2>
           <div class="toggle-arrow"></div>
@@ -105,6 +107,35 @@
               code: opens a file in VSCode
               <div class="example">
                 <p>$ code index.html</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="css">
+        <h2>
+          <div class="toggle-arrow"></div>
+          CSS Stuff
+        </h2>
+        <div class="section-tabs"></div>
+        <div class="note-section">
+          <h3>Boiler plate</h3>
+          <ol>
+            <li>
+              Remove existing formatting
+              <div class="example">
+                <p>*{</p>
+                <p>&nbsp padding: 0;</p>
+                <p>&nbsp margin: 0;</p>
+                <p>&nbsp box-sizing: border-box;</p>
+                <p>}</p>
+              </div>
+            </li>
+            <li>
+              pwd: shows the current folder (print working directory)
+              <div class="example">
+                <p>$ pwd</p>
+                <p>/c/Users/USERNAME/Documents/coding-projects/notebook</p>
               </div>
             </li>
           </ol>
@@ -253,6 +284,7 @@
           </ol>
         </div>
       </section>
+    </div>
     </main>
     <footer></footer>
     <script src="script.js"></script>

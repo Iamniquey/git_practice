@@ -1,25 +1,55 @@
 /**___________________________________________________________________________________________________ **/
+/*******GENERATE IDS FOR ALL NOTE RELATED ELEMENTS********/
+const allHeadings = document
+  .getElementById("collection")
+  .querySelectorAll("h2, h3, li");
+//const allNotes = document.querySelectorAll(".note-section").forEach((sec) => sec.querySelectorAll("li"));
+const allLists = document.getElementById("collection").querySelectorAll("li");
+console.log(allHeadings);
+
+let countHead1 = 1;
+let countHead2 = 1;
+let countList = 1;
+
+allHeadings.forEach((heading) => {
+  //Create ID for a heading if it doesn't have one
+  if (!heading.id) {
+    if (heading.tagName[1] === "2") {
+      heading.id = `section-${countHead1}`;
+      //increment
+      countHead1 += 1;
+      //reset
+      countHead2 = 1;
+    } else if (heading.tagName[1] === "3") {
+      heading.id = `section-${countHead1 - 1}-${countHead2}`;
+      //increment
+      countHead2 += 1;
+      //reset
+      countList = 1;
+    } else if (heading.tagName == "LI") {
+      console.log(heading);
+      heading.id = `section-${countHead1 - 1}-${countHead2 - 1}-${countList}`;
+      //increment
+      countList += 1;
+    }
+    
+  }
+});
+
+//Create ids for list items under #collection div
+/**allLists.forEach((item) => {
+  item.id = `section-${item.parentElement.parentElement.querySelector("h3").id}-${countList}`;
+  //increment
+  countList += 1;
+});*/
+
+/**___________________________________________________________________________________________________ **/
 /*******MAKE DYNAMIC TOC********/
 
 const headings = document.querySelectorAll("h2");
 const tocContainer = document.getElementById("table-of-contents");
-//count the headings
-let countHeading1 = 1;
-let countHeading2 = 1;
-let countHeading3 = 1;
 
 headings.forEach((heading, index) => {
-  //Create ID for a heading if it doesn't have one
-  if (!heading.id) {
-    if (heading.tagName[1] === "2") {
-      heading.id = `section-${countHeading1}`;
-      //increment
-      countHeading1 += 1;
-      //reset
-      countHeading2 = 1;
-    }
-  }
-
   //Create an anchor link for headings
   const link = document.createElement("a");
   link.href = `#${heading.id}`;
@@ -177,3 +207,7 @@ headingsWithTabs.forEach((hed) => {
 
 /**___________________________________________________________________________________________________ **/
 /******* FAVORITE A NOTE ********/
+
+//add divider line  ---------MOVE TO ONLY COME WHEN FAVS ARE CREATED
+const hr = document.createElement("hr");
+tocContainer.appendChild(hr);
